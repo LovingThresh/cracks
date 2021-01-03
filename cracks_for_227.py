@@ -153,7 +153,7 @@ history = model.fit(
     validation_data=validation_generator,
     validation_steps=20)
 
-# model.save('/data-tmp/cracks/model/result_model/cracks_for_227.hs')
+# model.save('/data-tmp/cracks/model/result_model/cracks_for_227.h5')
 
 
 def loss_and_acc_graph(history):
