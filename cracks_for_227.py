@@ -183,7 +183,7 @@ test_generator = test_datagen.flow_from_directory(
 test_loss, test_acc = model.evaluate_generator(test_generator, steps=50)
 print('test acc:', test_acc)
 
-
+# smallss
 
 
 
