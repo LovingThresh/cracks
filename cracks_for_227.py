@@ -109,7 +109,9 @@ model.add(Conv2D(32, (7, 7), activation='relu', input_shape=(227, 227, 3)))
 model.add(MaxPool2D(4, 4))
 model.add(Conv2D(64, (5, 5), activation='relu'))
 model.add(MaxPool2D(4, 4))
-model.add(Conv2D(64, (3, 3), activation='relu'))
+model.add(Conv2D(128, (3, 3), activation='relu'))
+model.add(MaxPool2D(2, 2))
+model.add(Conv2D(256, (3, 3), activation='relu'))
 
 model.add(Flatten())
 model.add(Dense(1024, activation='relu'))
@@ -149,11 +151,11 @@ validation_generator = test_datagen.flow_from_directory(
 history = model.fit(
     train_generator,
     steps_per_epoch=40,
-    epochs=30,
+    epochs=50,
     validation_data=validation_generator,
     validation_steps=20)
 
-# model.save('/data-tmp/cracks/model/result_model/cracks_for_227.h5')
+model.save('/data-tmp/cracks/model/result_model/cracks_for_227.h5')
 
 
 def loss_and_acc_graph(history):
